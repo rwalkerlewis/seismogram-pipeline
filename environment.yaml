@@ -8,4 +8,5 @@ dependencies:
   - docopt
   - matplotlib
   - scipy
+  - scikit-image
 prefix: /home/bennlich/miniconda3/envs/seismo

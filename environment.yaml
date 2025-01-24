@@ -1,6 +1,7 @@
 name: seismo
 channels:
   - defaults
+  - conda-forge
 dependencies:
   - python=2.7
   - numpy
@@ -9,4 +10,5 @@ dependencies:
   - matplotlib
   - scipy
   - scikit-image
+  - opencv
 prefix: /home/bennlich/miniconda3/envs/seismo

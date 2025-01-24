@@ -47,7 +47,7 @@ def get_ridge_region_horiz(ridges, shape):
     ridge_width = round(np.sqrt(2) * sigma)
     bounds = np.array([row-ridge_width, row+ridge_width])
     bounds = np.clip(bounds, 0, shape[0]-1)
-    ridge_region[bounds[0]:bounds[1], col] = max_value
+    ridge_region[int(bounds[0]):int(bounds[1]), int(col)] = max_value
 
   return ridge_region
 

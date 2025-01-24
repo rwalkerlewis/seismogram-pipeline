@@ -67,8 +67,8 @@ def ellipse(cy, cx, yradius, xradius, shape=None):
     rr, cc = _ellipse_in_shape(bounding_shape, shifted_center, radiuses)
     rr.flags.writeable = True
     cc.flags.writeable = True
-    rr += upper_left[0]
-    cc += upper_left[1]
+    rr += int(upper_left[0])
+    cc += int(upper_left[1])
     return rr, cc
 
 

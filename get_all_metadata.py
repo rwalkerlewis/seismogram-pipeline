@@ -163,7 +163,7 @@ def analyze_image(in_file, out_dir, stats_file=False, scale=1, debug_dir=False, 
 
   Debug.save_image("intersections", "intersections", intersection_image)
   timeStart("save intersections raster")
-  misc.imsave(paths["intersections_raster"], intersection_image)
+  misc.imsave(paths["intersections_raster"], intersection_image.astype(int))
   timeEnd("save intersections raster")
 
   print "\n--SEGMENTS--"
@@ -178,7 +178,7 @@ def analyze_image(in_file, out_dir, stats_file=False, scale=1, debug_dir=False, 
   timeEnd("encode labels as rgb values")
 
   timeStart("save segment regions")
-  misc.imsave(paths["segment_regions"], rgb_segments)
+  misc.imsave(paths["segment_regions"], rgb_segments.astype(int))
   timeEnd("save segment regions")
 
   timeStart("convert centerlines to geojson")

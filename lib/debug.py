@@ -31,7 +31,7 @@ class Debug:
 
     count = cls.stage_count[stage] = cls.stage_count.get(stage, -1) + 1
     filename = "%s.%s.%s.%s.png" % (pad(cls.global_count), stage, pad(count), name)
-    misc.imsave(cls.debug_dir+"/"+filename, img)
+    misc.imsave(cls.debug_dir+"/"+filename, img.astype(int))
     cls.global_count = cls.global_count + 1
 
   @classmethod

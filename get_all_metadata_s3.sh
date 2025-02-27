@@ -21,8 +21,16 @@ dir=`mktemp -d /tmp/seismo.XXXXX` && \
 # save stats to metadata directory
 stats_path="$dir/stats.json" && \
 echo "writing to $dir" && \
-# sh set_seismo_status.sh $image_name 1 $type && \
+
+echo "set_seismo_status.sh"
+sh set_seismo_status.sh $image_name 1 $type && \ 
+
+echo "get_all_metadata.py"
 python get_all_metadata.py --image $image_path --output $dir --stats $stats_path && \
+
+echo "copy_to_s3.sh"
 sh copy_to_s3.sh $image_name $dir $bucket_name $type && \
+
+echo "set_seismo_status.sh"
 sh set_seismo_status.sh $image_name 3 $type && \
 rm -rf $dir

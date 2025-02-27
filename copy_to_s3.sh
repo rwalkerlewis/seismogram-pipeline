@@ -17,9 +17,12 @@ bucket_name=$3
 # production otherwise
 type=$4
 
+echo "Type: ${type}"
+
 if [ "$type" != "dev" ]; then
   aws s3 cp --recursive $dir s3://wwssn-$bucket_name/$image_name --region us-east-1 --profile seismo
 else
+  echo "../seismogram-app/client/$bucket_name/$image_name"
   mkdir -p ../seismogram-app/client/$bucket_name/$image_name && \
   cp -r $dir/* ../seismogram-app/client/$bucket_name/$image_name
 fi

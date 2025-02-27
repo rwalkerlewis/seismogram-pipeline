@@ -25,6 +25,7 @@ status=$2
 # "dev" indicates development mode
 # production otherwise
 type=$3
+echo "Type: ${type}"
 
 if [ "$type" != "dev" ]; then
   wget --user $user --password $pass $server/processing/setstatus/$image_name/$status -O /dev/null
